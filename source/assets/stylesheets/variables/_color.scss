@@ -1,25 +1,9 @@
-// Set Function
-@function palette($color_type, $tone_name:'base') {
-  $color: map-get($colors, $color_type);
-  $torn: map-get($color, $tone_name);
-  @return $torn;
-}
+$bg: #C9E8F1;
+$font: #fafafa;
 
-// Set Colors
-$colors: (
-  font: (
-    base: #333,
-    inverse: #fff
-  ),
-  bg: (
-    base: #fff,
-    inverse: #000
-  )
-);
-
-$btn01: #6BBED5;
+$btn01: #64C99B;
 $btn02: #FBE481;
 $btn03: #EDA184;
 $btn04: #DF81A2;
 $btn05: #D27EB3;
-$btn06: #64C99B;
+$btn06: #6BBED5;

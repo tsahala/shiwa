@@ -1,8 +1,5 @@
 #= require core/jquery-2.1.1.min.js
 
-
-
-
 #いやいやここのしわ
 a01 = new Audio('assets/sounds/01.mp3')
 $('.btn01').on 'click', (e) ->

@@ -21,19 +21,74 @@
   box-sizing: border-box
 
 body
-  background-color: paletet("bg", "base")
-  color: palette("font", "base")
+  background-color: $bg
+  color: $font
   font-family: "Helvetica Neue", Helvetica, Arial, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif
+
+::selection
+  background-color: $font
+  color: $bg
 
 a
   text-decoration: none
-
-.l-main
 
 .l-container
   @include outer-container
   max-width: 1024px
 
+
+// User Styles
+
+.l-title
+  font-size: 3em
+
+  a
+    color: $font
+    text-shadow: 0px 3px 2px darken($font, 30%)
+    position: relative
+    z-index: 1
+    @include transition(all 0.25s)
+
+    &:before, &:after
+      content: ""
+      position: absolute
+      width: 50%
+      height: 1px
+      top: 50%
+      left: 50%
+      margin-left: -25%
+      background-color: darken($font, 30%)
+      z-index: -1
+      @include transition(all 0.25s)
+
+    &:before
+      @include transform(rotate(20deg) skew(100deg))
+
+    &:after
+      @include transform(rotate(-20deg) skew(-100deg))
+
+    &:hover
+      color: lighten($bg, 6%)
+      text-shadow: 0px 2px 1px darken($font, 45%)
+      @include transition(all 0.5s)
+
+      &:before, &:after
+        @include transition(all 0.5s)
+        @include transform(rotate(0deg))
+
+    &:active
+
+      &:before
+        @include transform(rotate(180deg))
+
+      &:after
+        @include transform(rotate(-360deg))
+
+      &:before, &:after
+        @include transition(all 0.5s)
+
+  @include media($mq-sm)
+    font-size: 1.8em
 
 
 .l-contents
@@ -59,7 +114,7 @@ a
     .btn
       display: block
       padding: 2em 1em
-      border-radius: 80px
+      border-radius: 50px
       position: relative
       transition: none
       font-size: 1.2em
@@ -85,7 +140,7 @@ a
       background-color: $btn01
       box-shadow: 0 6px darken($btn01, 20%)
       color: darken($btn01, 40%)
-      text-shadow: 0px 2px 5px lighten($btn01, 20%)
+      text-shadow: 0px 1px 1px lighten($btn01, 10%)
       &:hover
         box-shadow: 0 4px darken($btn01, 20%)
       &:active
@@ -95,7 +150,7 @@ a
       background-color: $btn02
       box-shadow: 0 6px darken($btn02, 20%)
       color: darken($btn02, 40%)
-      text-shadow: 0px 2px 5px lighten($btn02, 20%)
+      text-shadow: 0px 1px 1px lighten($btn02, 10%)
       &:hover
         box-shadow: 0 4px darken($btn02, 20%)
       &:active
@@ -105,7 +160,7 @@ a
       background-color: $btn03
       box-shadow: 0 6px darken($btn03, 20%)
       color: darken($btn03, 40%)
-      text-shadow: 0px 2px 5px lighten($btn03, 20%)
+      text-shadow: 0px 1px 1px lighten($btn03, 10%)
       &:hover
         box-shadow: 0 4px darken($btn03, 20%)
       &:active
@@ -115,7 +170,7 @@ a
       background-color: $btn04
       box-shadow: 0 6px darken($btn04, 20%)
       color: darken($btn04, 40%)
-      text-shadow: 0px 2px 5px lighten($btn04, 20%)
+      text-shadow: 0px 1px 1px lighten($btn04, 10%)
       &:hover
         box-shadow: 0 4px darken($btn04, 20%)
       &:active
@@ -125,7 +180,7 @@ a
       background-color: $btn05
       box-shadow: 0 6px darken($btn05, 20%)
       color: darken($btn05, 40%)
-      text-shadow: 0px 2px 5px lighten($btn05, 20%)
+      text-shadow: 0px 1px 1px lighten($btn05, 10%)
       &:hover
         box-shadow: 0 4px darken($btn05, 20%)
       &:active
@@ -135,7 +190,7 @@ a
       background-color: $btn06
       box-shadow: 0 6px darken($btn06, 20%)
       color: darken($btn06, 40%)
-      text-shadow: 0px 2px 5px lighten($btn06, 20%)
+      text-shadow: 0px 1px 1px lighten($btn06, 10%)
       &:hover
         box-shadow: 0 4px darken($btn06, 20%)
       &:active
