@@ -41,6 +41,11 @@ a
 
 .l-title
   font-size: 3em
+  margin: 0 auto
+  padding: 1em 0 0.2em
+
+  @include media($mq-sm)
+    padding: 0.8em 0 0.6em
 
   a
     color: $font
@@ -73,8 +78,12 @@ a
       @include transition(all 0.5s)
 
       &:before, &:after
+        width: 97%
+        left: 27%
+        background-color: lighten($bg, 6%)
         @include transition(all 0.5s)
         @include transform(rotate(0deg))
+
 
     &:active
 
@@ -104,8 +113,8 @@ a
 
     .l-inner
       z-index: 1
-      margin-top: 6%
-      margin-bottom: 6%
+      margin-top: 14%
+      margin-bottom: 14%
 
       @include media($mq-sm)
         margin-top: 2%
@@ -123,11 +132,6 @@ a
       @include media($mq-sm)
         font-size: 0.8em
         padding: 1.5em 0.5em
-
-      &:after
-        content: ''
-        position: absolute
-        z-index: -1
 
       &:hover
         top: 2px
