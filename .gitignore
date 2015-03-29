@@ -3,4 +3,6 @@
 # /build
 /.sass-cache
 /.cache
+*.lock
 .DS_Store
+
