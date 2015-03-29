@@ -36,15 +36,18 @@ html lang="ja" prefix="og: http://ogp.me/ns# fb: http://www.facebook.com/2008/fb
       script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"
 
   body class="#{page_classes}"
-    / header
-    == partial 'partial/_header'
 
-    / main
-    == yield
+    .l-wrapper
 
-    / footer
-    == partial 'partial/_footer'
+      / header
+      == partial 'partial/_header'
 
-    / script
-    == javascript_include_tag  "all"
-    == partial 'partial/_script'
+      / main
+      == yield
+
+      / footer
+      == partial 'partial/_footer'
+
+      / script
+      == javascript_include_tag  "all"
+      == partial 'partial/_script'

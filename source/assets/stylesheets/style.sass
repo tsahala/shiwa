@@ -32,6 +32,10 @@ body
 a
   text-decoration: none
 
+h1
+  padding: 0
+  margin: 0
+
 .l-container
   @include outer-container
   max-width: 1024px
@@ -41,14 +45,27 @@ a
 
 // User Styles
 
-.l-title
-  font-size: 3em
-  margin: 0 auto
-  padding: 1em 0 0.2em
+.l-wrapper
+  height: 80vh
+  margin: 10vh 0 10vh
 
   @include media($mq-sm)
-    font-size: 1.5em
-    padding: 0.8em 0 0.6em
+    height: 90vh
+    margin: 5vh 0 5vh
+
+
+.l-title
+  padding: 1.5em 0
+
+  @include media($mq-sm)
+    padding: 0.5em 0
+
+  h1
+    font-size: 3em
+
+    @include media($mq-sm)
+      font-size: 1.5em
+      padding: 0.8em 0 0.6em
 
   a
     color: $font
@@ -100,30 +117,20 @@ a
         @include transition(all 0.5s)
 
 
-.l-main
-  @include media($mq-sm)
-    padding: 0 0 0.5em
+.l-row
+  @include row
+  margin-bottom: 2em
 
-
-.l-contents
-  @include outer-container
   @include media($mq-sm)
-    margin: 0 5%
+    margin: 0 10%
 
   .l-span
     @include span-columns(4)
 
     @include media($mq-sm)
       @include span-columns(12)
+      margin-bottom: 8%
 
-    .l-inner
-      z-index: 1
-      margin-top: 14%
-      margin-bottom: 14%
-
-      @include media($mq-sm)
-        margin-top: 3%
-        margin-bottom: 3%
 
     .btn
       display: block
@@ -207,11 +214,17 @@ a
 
 
 .l-footer
-  padding: 0 0 1em
 
-  @include media($mq-sm)
-    padding: 0 0 0.5em
+  .l-logo-github
+    padding: 1em 0
 
-  img
-    width: 40px
-    height: 40px
+    @include media($mq-sm)
+      padding: 4% 0
+
+    img
+      width: 40px
+      height: 40px
+
+      @include media($mq-sm)
+        width: 10%
+        height: 10%
