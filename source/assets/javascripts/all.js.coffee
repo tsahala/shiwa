@@ -1,5 +1,31 @@
 #= require core/jquery-2.1.1.min.js
 
+linkTouchStart = ->
+  thisAnchor = jQuery(this)
+  touchPos = thisAnchor.offset().top
+
+  moveCheck = ->
+    nowPos = thisAnchor.offset().top
+    if touchPos == nowPos
+      thisAnchor.addClass 'js-touch'
+    return
+
+  setTimeout moveCheck, 100
+  return
+
+linkTouchEnd = ->
+  thisAnchor = jQuery(this)
+
+  hoverRemove = ->
+    thisAnchor.removeClass 'js-touch'
+    return
+
+  setTimeout hoverRemove, 500
+  return
+
+jQuery(document).on 'touchstart mousedown', 'a', linkTouchStart
+jQuery(document).on 'touchend mouseup', 'a', linkTouchEnd
+
 #いやいやここのしわ
 a01 = new Audio('assets/sounds/01.mp3')
 $('.btn01').on 'click', (e) ->
